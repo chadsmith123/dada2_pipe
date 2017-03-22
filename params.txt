@@ -1,0 +1,28 @@
+# Parameters for DADA2 pipeline
+#
+# Global variables
+RAW_SEQDIR="/tmp/test/"			# Path to raw fastq.gz files for processing
+SEQ_PATH="/tmp/test/no_primers/"	# Path to trimmed fastq.gz sequences
+R_FILE="dada_test_params.RDat"		# File name of R object to output
+
+# 01.trim_primers.sh
+PRIMER_F="GTGYCAGCMGCCGCGGTA"		# Forward primer sequence
+PRIMER_R="GGACTACHVGGGTWTCTAAT"		# Reverse primer sequence
+READF_ID="_R1"				# String indicating how read 1 is listed in the fastq filename 
+READR_ID="_R2"				# String indicating how read 2 is listed in the fastq filename 
+ERROR_RATE=0				# Error rate tolerated in primer sequence (default:0)
+
+# 03.filter_dereplicate.r
+TRIMLEFT_F=0				# Trim forward sequences by x bases from the 5' end before truncating
+TRIMLEFT_R=0				# Trim reverse sequences by x bases from the 5' end before truncating
+TRUNC_F=230				# Truncate 3' end of forward reads to x size before merging
+TRUNC_R=230				# Truncate 3' end of reverse reads to x size before merging
+MAXN=0					# Maximum number of N's in sequence allowed
+MAXEE=1					# Maximum expected errors before sequence is discarded
+TRUNCQ=2				# Truncate sequence if Illumina quality score falls below this value
+
+# 04.dada.r
+GG_TRAIN="../gg_13_8_train_set_97.fa.gz"	# Location of Greengenes training set 
+MINOVERLAP=20					# Minimum overlap between reads to merge them
+MAXMISMATCH=0					# Maximum number of differences between reads to merge them
+THREADS=4					# CPU threads to use for chimera detection

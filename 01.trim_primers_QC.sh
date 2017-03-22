@@ -5,11 +5,10 @@
 # 
 # Usage: ./01.trim_primers_QC.sh
 #
-# LOG_DIR       Path to cutadapt *.log files 
+# SEQ_PATH       Path to cutadapt *.log files 
+source params.txt
 
-LOG_DIR=/tmp/test
-
-for i in `find $LOG_DIR -iname "*.log"`; do
+for i in `find $SEQ_PATH -iname "*.log"`; do
 	passed=`cat ${i} | grep "Pairs written (passing filters):" |cut -f5- -d " " |sed -e 's;^ *;;' -e 's; ;\t;'`
 	echo -e "${i}\t${passed}" 
 done

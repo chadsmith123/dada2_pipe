@@ -9,21 +9,17 @@
 # READ1_ID      String indicating how read 1 is listed in the fastq filename 
 # READ2_ID      String indicating how read 2 is listed in the fastq filename 
 # R_FILE	R file to output
+source("params.txt")
 
 require(dada2); packageVersion("dada2")
 require(ShortRead)
 require(ggplot2)
 
-SEQ_PATH <- "/tmp/test/no_primers/" 
-FORWARD_ID="_R1"
-REVERSE_ID="_R2"
-R_FILE="dada_test.Rdat"
-
 fns <- list.files(SEQ_PATH)
 fastqs <- fns[grepl(".fastq.gz$", fns)]
 fastqs <- sort(fastqs) # Sort ensures forward/reverse reads are in same order
-fnFs <- fastqs[grepl(FORWARD_ID, fastqs)] # Just the forward read files
-fnRs <- fastqs[grepl(REVERSE_ID, fastqs)] # Just the reverse read files
+fnFs <- fastqs[grepl(READF_ID, fastqs)] # Just the forward read files
+fnRs <- fastqs[grepl(READR_ID, fastqs)] # Just the reverse read files
 
 # Get sample names from the first part of the forward read filenames
 sample.names <- sapply(strsplit(fnFs, "_"), `[`, 1)

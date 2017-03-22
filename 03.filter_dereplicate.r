@@ -16,13 +16,7 @@
 require(dada2); packageVersion("dada2")
 require(ShortRead)
 
-SEQ_PATH <- "/tmp/test/no_primers/"
-TRIM_LEFT=c(0,0) # Primers trimmed by cutadapt
-TRUNC=c(230,230)
-MAXN=0
-MAXEE=2
-TRUNCQ=2
-R_FILE="dada_test.Rdat"
+source("params.txt")
 
 load(R_FILE)
 
@@ -33,7 +27,7 @@ filtRs <- paste0(SEQ_PATH, sample.names, "_R_filt.fastq.gz")
 cat("### Running fastqPairedFilter\n")
 for(i in seq_along(fnFs)) {
  fastqPairedFilter(c(fnFs[i], fnRs[i]), c(filtFs[i], filtRs[i]),
- trimLeft=TRIM_LEFT, truncLen=TRUNC, 
+ trimLeft=c(TRIMLEFT_F,TRIMLEFT_R), truncLen=c(TRUNC_F,TRUNC_R), 
  maxN=MAXN, maxEE=MAXEE, truncQ=TRUNCQ, 
  compress=TRUE, verbose=TRUE)
 }
