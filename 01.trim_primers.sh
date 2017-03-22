@@ -3,7 +3,10 @@
 # Writes a script to:
 # 1) Discard sequences without forward and reverse primers 
 # 2) Trim primers from forward and reversed reads in paired-end sequences.
-# 
+#
+# Requires that FASTQ file names are formatted '$ID_$READ.fastq.gz', e.g.
+# sample1_F.fastq.gz is the forward read for 'sample1'.
+#
 # Usage: ./01.trim_primers.sh
 #
 # Requires: cutadapt

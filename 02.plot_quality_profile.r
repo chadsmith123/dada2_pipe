@@ -42,4 +42,4 @@ png("quality_profile_R2.png",width=800,height=800);plotQualityProfile(fnRs[[1]])
 png("quality_profile_R3.png",width=800,height=800);plotQualityProfile(fnRs[[3]]);dev.off()
 png("quality_profile_R4.png",width=800,height=800);plotQualityProfile(fnRs[[4]]);dev.off()
 
-save(fns, fastqs, fnFs, fnRs, sample.names, file=R_FILE)
+save.image(file=R_FILE)
