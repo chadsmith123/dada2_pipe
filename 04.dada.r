@@ -27,7 +27,7 @@ cat("### Running dada\n")
 dadaFs <- dada(derepFs, err=inflateErr(tperr1,3), selfConsist = TRUE,multithread=T)
 dadaRs <- dada(derepRs, err=inflateErr(tperr1,3), selfConsist = TRUE,multithread=T)
 plotErrors(dadaFs[[1]], nominalQ=TRUE)
-ggsave("plot_errors.png")
+ggsave(paste("plotErrors_", names(dadaFs)[1], ".png", sep=""))
 
 cat("### Running mergePairs\n")
 mergers <- mergePairs(dadaFs, derepFs, dadaRs, derepRs, minOverlap=MINOVERLAP,
