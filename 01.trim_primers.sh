@@ -41,4 +41,5 @@ cutadapt -g $PRIMER_F -G $PRIMER_R\
  --trimmed-only\
  > ${SEQ_PATH}/${sampleid}.log\
 " >> 01.trim_primers.ex
+chmod +x 01.trim_primers.ex
 done
