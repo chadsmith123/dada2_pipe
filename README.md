@@ -16,11 +16,12 @@ The steps are:
 - [R](http://cran.stat.ucla.edu/)
 - [dada2](https://github.com/benjjneb/dada2)
 
+## Description
 The output of the pipeline is an .RData file with the dada2 analysis. To run the pipeline a file named "params.txt" is required in the directory the scripts are executed to set the parameters and paths. See the example [params.txt](https://github.com/chadsmith123/dada2_pipe/blob/master/params.txt) for the format and the [dada2 documentation](http://benjjneb.github.io/dada2/index.html) for details on what the parameters are.
 
 The pipeline is broken up into four steps at decision points in the workflow and where scripts are generated for use on a cluster. Scripts for cluster computing are indicated with a *.ex suffix. If using TACC at the University of Texas, the launcher_creator.py script can be run on *.ex scripts to generate job scripts to submit to the cluster. The pipeline can also be run without a cluster by simply executing the *.ex scripts. 
 
-To run the pipeline:
+**To run the pipeline:**
 1. Edit the params.txt file to set your paths and parameters
 2. Execute ./01.trim_primers.sh
 3. Submit 01.trim_primers.ex to the cluster or execute the script locally
