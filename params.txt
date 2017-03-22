@@ -13,8 +13,8 @@ READR_ID="_R2"				# String indicating how read 2 is listed in the fastq filename
 ERROR_RATE=0				# Error rate tolerated in primer sequence (default:0)
 
 # 03.filter_dereplicate.r
-TRIMLEFT_F=0				# Trim forward sequences by x bases from the 5' end before truncating
-TRIMLEFT_R=0				# Trim reverse sequences by x bases from the 5' end before truncating
+TRIMLEFT_F=0				# Trim forward sequences by x bases from the 5' end before truncating. Set to zero if cutadapt was used.
+TRIMLEFT_R=0				# Trim reverse sequences by x bases from the 5' end before truncating. Set to zero if cutadapt was used.
 TRUNC_F=230				# Truncate 3' end of forward reads to x size before merging
 TRUNC_R=230				# Truncate 3' end of reverse reads to x size before merging
 MAXN=0					# Maximum number of N's in sequence allowed
