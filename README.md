@@ -28,10 +28,17 @@ To run the pipeline:
 5. R CMD BATCH --vanilla --slave 02.plot_quality_profile.r to check sequence quality and decide where to truncate the reads before they are filtered in the next step.
 6. R CMD BATCH --vanilla --slave 03.filter_dereplicate.r
 7. ./03.filter_dereplicate.sh to view how many sequences survived filtering
+<<<<<<< HEAD
 8. R CMD BATCH --vanilla --slave 04.dada.r runs dada2 and generates a plot of the error rates and the merged sequence length distribution
 9. ./04.dada_merge_qc.sh to view how many sequences were successfully merged
 
 R also generates *.Rout output with additional diagnostic information that is not parsed by the pipeline. 
+=======
+8. R CMD BATCH --vanilla --slave 04.dada.r
+9. ./04.dada_merge_qc.sh to view how many sequences were successfully merged
+
+R generates *.Rout output with additional diagnostic information. 
+>>>>>>> 66397985ba5a72f812c0f09c364771c4d8c7890a
 
 ## References
 Callahan BJ, McMurdie PJ, Rosen MJ et al. (2016) DADA2: High-resolution sample inference from Illumina amplicon data. Nature Methods, 13, 581–583.
