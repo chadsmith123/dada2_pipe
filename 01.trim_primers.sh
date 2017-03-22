@@ -11,7 +11,6 @@
 #
 # Requires: cutadapt
 #
-# BASE		Working directory
 # RAW_SEQDIR	Path to fastq.gz files for processing
 # OUTDIR	Output directory for processed reads
 # PRIMER_F	Forward primer sequence
